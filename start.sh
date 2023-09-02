@@ -5,8 +5,8 @@ NEZHA_KEY=${NEZHA_KEY:-''}
 TLS=${TLS:-'1'}
 ARGO_DOMAIN=${ARGO_DOMAIN:-''}
 ARGO_AUTH=${ARGO_AUTH:-''}
-WSPATH=${WSPATH:-'argo'}
-UUID=${UUID:-'de04add9-5c68-8bab-950c-08cd5320df18'}
+WSPATH=${WSPATH:-'6af1d008-ddec-4c3d-a8a3-e8477f9f79bb'}
+UUID=${UUID:-'6af1d008-ddec-4c3d-a8a3-e8477f9f79bb'}
 CFIP=${CFIP:-'icook.hk'}
 NAME=${NAME:-''}
 
