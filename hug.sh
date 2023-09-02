@@ -8,6 +8,7 @@ ARGO_AUTH=${ARGO_AUTH:-''}
 WSPATH=${WSPATH:-'argo'}
 UUID=${UUID:-'de04add9-5c68-8bab-950c-08cd5320df18'}
 CFIP=${CFIP:-'icook.hk'}
+NAME=${NAME:-''}
 
 if [ "$TLS" -eq 0 ]; then
   NEZHA_TLS=''
@@ -365,8 +366,14 @@ function get_argo_domain() {
   fi
 }
 
-isp=$(curl -s https://speed.cloudflare.com/meta | awk -F\" '{print $26"-"$18"-"$30}' | sed -e 's/ /_/g')
+ip=$(curl -s https://speed.cloudflare.com/meta | awk -F\" '{print $26"-"$18}' | sed -e 's/ /_/g')
 sleep 3
+ 
+if [ -n "$NAME" ]; then 
+  isp="$NAME"  
+else
+  isp="$ip" 
+fi
 
 generate_links() {
   argo=$(get_argo_domain)
